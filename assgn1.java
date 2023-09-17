@@ -60,8 +60,7 @@ class Complex{
 public class assgn1 {
     public static int menu(){
         int choice;
-        System.out.println("Enter 1 for addition \n" + "Enter 2 for subtraction\n" + "Enter 3 for multiplication");
-        System.out.println("Enter 4 for division");
+        System.out.println("1.Addition \n" + "2.Subtraction\n" + "3.Multiplication\n"+"4.Division\n");
         Scanner sc=new Scanner(System.in);
         choice = sc.nextInt();
         return choice;
@@ -70,11 +69,11 @@ public class assgn1 {
     public static void main(String[] args) {
         int choice;
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter real part of 1st complex number:");
+        System.out.println("Enter the real part of 1st complex number:");
         int real1=sc.nextInt();
         System.out.println("Enter the imaginary part of 1st complex number:");
         int imaginary1=sc.nextInt();
-        System.out.println("Enter real part of 2nd complex number:");
+        System.out.println("Enter the real part of 2nd complex number:");
         int real2=sc.nextInt();
         System.out.println("Enter the imaginary part of 2nd complex number:");
         int imaginary2=sc.nextInt();
@@ -103,12 +102,12 @@ public class assgn1 {
             case 3:
 
                 C3 = C3.multiply(C1, C2);
-                System.out.println("Multiplication of two complex numbers is:");
+                System.out.println("Multiplication of complex numbers is:");
                 C3.printComplexNumber();
                 break;
             case 4:
                 C3 = C3.divide(C1, C2);
-                System.out.println("Division of two complex numbers is:");
+                System.out.println("Division of complex numbers is:");
                 C3.printComplexNumber();
                 break;
         }
