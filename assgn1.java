@@ -1,19 +1,14 @@
 import java.util.Scanner;
 class Complex{
     private float real,imaginary;
-
     public Complex(){
-
+        this.real = 3;
+        this.imaginary = 4;
     }
-
-
     public Complex(float real,float imaginary){
         this.real=real;
         this.imaginary=imaginary;
     }
-
-
-
     Complex add(Complex C1,Complex C2){
         Complex C3=new Complex();
         C3.real=C1.real+C2.real;
@@ -26,27 +21,19 @@ class Complex{
         C3.real=C1.real-C2.real;
         C3.imaginary=C1.imaginary- C2.imaginary;
         return C3;
-
-
     }
-
     Complex multiply(Complex C1,Complex C2){
         Complex C3=new Complex();
         C3.real=C1.real*C2.real-C1.imaginary*C2.imaginary;
         C3.imaginary=C1.imaginary*C2.real+C1.real* C2.imaginary;
         return C3;
     }
-
     Complex divide(Complex C1,Complex C2){
         Complex C3=new Complex();
         C3.real=(C1.real*C2.real + C1.imaginary*C2.imaginary)/(C2.real*C2.real+C2.imaginary*C2.imaginary);
         C3.imaginary=(C1.imaginary*C2.real-C1.real*C2.imaginary)/(C2.real*C2.real+C2.imaginary*C2.imaginary);
         return C3;
     }
-
-
-
-
     public void printComplexNumber(){
         if(imaginary>0) {
             System.out.println(real + "+" + imaginary+"i");
@@ -55,7 +42,6 @@ class Complex{
             System.out.println(real+""+imaginary+"i");
         }
     }
-
 }
 public class assgn1 {
     public static int menu(){
@@ -64,7 +50,6 @@ public class assgn1 {
         Scanner sc=new Scanner(System.in);
         choice = sc.nextInt();
         return choice;
-
     }
     public static void main(String[] args) {
         int choice;
