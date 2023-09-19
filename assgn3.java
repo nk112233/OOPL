@@ -7,47 +7,48 @@ class Employee {
     int empid;
     long mobNo;
     String empmail;
-    public double basicPay=0;
-    double da,hra,pf,club,net,gross;
+    public double basicPay = 0;
+    double da, hra, pf, club, net, gross;
 
-    void designation(Scanner inp){
+    void designation(Scanner inp) {
         do {
             System.out.println("Please enter For designation \n 1 for Programmer \n 2 for TeamLead \n 3 for AssistantProjectManager \n 4 for ProjectManager");
             int i = inp.nextInt();
             switch (i) {
                 case 1:
-                    Programmer p=new Programmer();
-                    basicPay=p.salary();
-                    des="Programmer";
+                    Programmer p = new Programmer();
+                    basicPay = p.salary();
+                    des = "Programmer";
                     break;
                 case 2:
-                    Teamlead T=new Teamlead();
-                    basicPay=T.salary();
-                    des="Teamlead";
+                    Teamlead T = new Teamlead();
+                    basicPay = T.salary();
+                    des = "Teamlead";
                     break;
                 case 3:
-                    AssistantProjectManager APM=new AssistantProjectManager();
-                    basicPay=APM.salary();
-                    des="AssProjectManager";
+                    AssistantProjectManager APM = new AssistantProjectManager();
+                    basicPay = APM.salary();
+                    des = "AssProjectManager";
                     break;
                 case 4:
-                    ProjectManager PM=new ProjectManager();
-                    basicPay=PM.salary();
-                    des="ProjectManager";
+                    ProjectManager PM = new ProjectManager();
+                    basicPay = PM.salary();
+                    des = "ProjectManager";
                     break;
                 default:
                     System.out.println("Wrong input please retry");
             }
-        }while(basicPay==0);
+        } while (basicPay == 0);
     }
+
     // function to get the data of the employee
-    void getData(Employee[] e , int j, Scanner inp) {
+    void getData(Employee[] e, int j, Scanner inp) {
 
 
         System.out.println("Enter the empid : ");
         empid = inp.nextInt();
         System.out.println("Enter the name : ");
-        empName = inp.next( );
+        empName = inp.next();
         System.out.println("Enter the emp mobile number : ");
         mobNo = inp.nextLong();
         inp.nextLine();
@@ -60,32 +61,53 @@ class Employee {
 
     // function to display the data of the employees
     void display() {
-        System.out.print(empid + "\t\t\t\t");
-        System.out.print(empName + "\t\t\t\t");
-        System.out.print(address + "\t\t\t\t");
-        System.out.print(mobNo + "\t\t\t\t");
-        System.out.print(empmail+"\t\t\t\t");
-        System.out.print(des+"\t\t\t\t");
-        System.out.print(basicPay+"\t\t\t\t");
-        System.out.println(gross);
+        System.out.println("----------Personal Info----------");
+        System.out.println("Name            : " + this.empName);
+        System.out.println("ID              : " + this.empid);
+        System.out.println("Designation     : " + this.des);
+        System.out.println("Mail            : " + this.empmail);
+        System.out.println("Address         : " + this.address);
+        System.out.println("Mobile No       : " + this.mobNo);
+        System.out.print("\n");
+
+        System.out.println("-----------Pay Slip-----------");
+        System.out.println("Basic Pay       : " + this.basicPay);
+        System.out.println("DA              : " + this.da);
+        System.out.println("HRA             : " + this.hra);
+        System.out.println("PF              : " + this.pf);
+        System.out.println("Club Fees       : "+this.club);
+        System.out.println("Gross Salary    : " + this.calcgross());
+        System.out.println("Net Salary      : " + this.netsalary());
+        System.out.print("\n\n");
     }
-    double getasst() {
-        da=0.97*basicPay;
-        hra=0.1*basicPay;
-        pf=0.12*basicPay;
-        club=0.001*basicPay;
-        return (da+hra+pf+club);
+
+    double netsalary() {
+        da = 0.97 * basicPay;
+        hra = 0.1 * basicPay;
+        pf = 0.12 * basicPay;
+        club = 0.001 * basicPay;
+        net = gross-pf-club;
+        return net;
+
     }
-    void calcgross(){
-        gross=basicPay+getasst();
+
+    double calcgross() {
+        da = 0.97 * basicPay;
+        hra = 0.1 * basicPay;
+        pf = 0.12 * basicPay;
+        club = 0.001 * basicPay;
+        gross = basicPay +da+hra;
+        return gross;
     }
 }
-class Programmer extends Employee{
+
+class Programmer extends Employee {
     //use of constructor to give a value to basicPay,which is a variable of class Employee(parent)
-    double salary(){
+    double salary() {
         return 20000;
     }
 }
+
 class Teamlead extends Employee{
     //use of constructor to give a value to basicPay,which is a variable of class Employee(parent)
     double salary(){
@@ -122,8 +144,7 @@ public class assgn3 {
             e[i].calcgross();
         }
 
-        System.out.println("Details of the employees are::");
-        System.out.println("Employee Id\t\tName\t\tAddress\t\tContact number\t\tEmail-id\t\t\tDesignation\t\t\tNet salary\t\t\tGross salary");
+        System.out.println("Details of the employees are: ");
         for (int i = 0; i < j; i++) {
             e[i].display();
         }
