@@ -61,7 +61,7 @@ public class assgn1 {
     }
     public static void main(String[] args) {
         //taking the real and imaginary part of complex number from the user
-        int choice;
+        int choice,ch;
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the real part of 1st complex number:");
         int real1=sc.nextInt();
@@ -80,32 +80,38 @@ public class assgn1 {
         C2.printComplexNumber();
         do {
             choice = menu();
-        }while(choice<1 || choice>4);
+
         Complex C3 = new Complex();
-        switch (choice) {
-            case 1:
-                C3 = C3.add(C1, C2);
-                System.out.println("Addition of complex numbers is:");
-                C3.printComplexNumber();
-                break;
-            case 2:
 
-                C3 = C3.sub(C1, C2);
-                System.out.println("Subtraction of complex numbers is:");
-                C3.printComplexNumber();
-                break;
-            case 3:
+            switch (choice) {
+                case 1:
+                    C3 = C3.add(C1, C2);
+                    System.out.println("Addition of complex numbers is:");
+                    C3.printComplexNumber();
+                    break;
+                case 2:
 
-                C3 = C3.multiply(C1, C2);
-                System.out.println("Multiplication of complex numbers is:");
-                C3.printComplexNumber();
-                break;
-            case 4:
-                C3 = C3.divide(C1, C2);
-                System.out.println("Division of complex numbers is:");
-                C3.printComplexNumber();
-                break;
-        }
+                    C3 = C3.sub(C1, C2);
+                    System.out.println("Subtraction of complex numbers is:");
+                    C3.printComplexNumber();
+                    break;
+                case 3:
 
+                    C3 = C3.multiply(C1, C2);
+                    System.out.println("Multiplication of complex numbers is:");
+                    C3.printComplexNumber();
+                    break;
+                case 4:
+                    C3 = C3.divide(C1, C2);
+                    System.out.println("Division of complex numbers is:");
+                    C3.printComplexNumber();
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+            }
+            System.out.println("Do you want to continue?(Press 1)");
+            Scanner inp = new Scanner(System.in);
+            ch = inp.nextInt();
+        }while( ch == 1);
     }
 }
