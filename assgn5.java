@@ -1,18 +1,24 @@
 import java.util.Scanner;
+//creation of interface for vehicle
 interface Vehicle{
     int startspeed  = 0;
     int initialgear = 0;
+    // declaring abstract methods for Vehicle Interface
     void speedup();
     void gearchange();
     void applybreaks();
 }
+//creation of Bicycle class inheriting Vehicle
 class Bicycle implements Vehicle{
+    // initializing speed and gear
     int speed = startspeed;
     int gear = 0;
+    // constructor to show the current Vehicle 
     public Bicycle(){
         System.out.println("Bicycle State : ");
 
     }
+    // implementation of all the methods declared in Vehicle
     public void gearchange(){
         gear = gear + 1;
         System.out.println("Gear: "+gear);
@@ -33,13 +39,17 @@ class Bicycle implements Vehicle{
         System.out.println("Speed: "+speed);
     }
 }
+//creation of Bike class inheriting Vehicle
 class Bike implements Vehicle{
+    // initializing speed and gear
     int speed = startspeed;
     int gear = 0;
+    // constructor to show the current Vehicle 
     public Bike(){
         System.out.println("Bike State : ");
 
     }
+    // implementation of all the methods declared in Vehicle
     public void gearchange(){
         gear = gear + 1;
         System.out.println("Gear: "+gear);
@@ -60,13 +70,17 @@ class Bike implements Vehicle{
         System.out.println("Speed: "+speed);
     }
 }
+//creation of Car class inheriting Vehicle
 class Car implements Vehicle{
+    // initializing speed and gear 
     int speed = startspeed;
     int gear = 0;
+    // constructor to show the current Vehicle 
     public Car(){
         System.out.println("Car State : ");
 
     }
+    // implementation of all the methods declared in Vehicle
     public void gearchange(){
         gear = gear + 1;
         System.out.println("Gear: "+gear);
