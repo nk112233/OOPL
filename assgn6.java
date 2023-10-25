@@ -18,10 +18,13 @@ public class Main {
                 c = a / b;
                 System.out.println("Adding a into array");
                 arr[0]  = a;
+                System.out.println("Success !");
                 System.out.println("Adding b into array");
                 arr[1] = b;
+                System.out.println("Success !");
                 System.out.println("Adding c into array");
                 arr[2] = c;
+                System.out.println("Success !");
                 eo = false;
             } catch (ArithmeticException e) {
                 System.out.println("Division Error");
