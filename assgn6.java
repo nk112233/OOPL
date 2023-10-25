@@ -34,7 +34,8 @@ public class Main {
 
             }
             catch (ArrayIndexOutOfBoundsException e){
-                System.out.println("Index OOB");
+                System.out.println("Array Index Out of Bound");
+                eo = false;
             }
         }while (eo);
 
