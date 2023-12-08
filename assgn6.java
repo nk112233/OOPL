@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class assgn6 {
     public static void main(String[] args) {
         //initializing 3 integer variable
         int a , b, c;

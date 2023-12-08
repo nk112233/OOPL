@@ -131,7 +131,7 @@ class Luxury extends Car_Factory{
 }
 
 // main class
-public class Main {
+public class assgn10 {
 
     //static main method
     public static void main(String[] args) {

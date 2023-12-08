@@ -189,7 +189,7 @@ class fileHandle {
     }
 }
 
-public class Main {
+public class assgn8 {
     public static void main(String[] args) {
         fileHandle f = new fileHandle();
         Scanner scanner = new Scanner(System.in);
