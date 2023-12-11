@@ -42,7 +42,7 @@ class Employee {
     }
 
     // function to get the data of the employee
-    void getData(Employee[] e, int j, Scanner inp) {
+    void getData(Scanner inp) {
 
 
         System.out.println("Enter the empid : ");
@@ -134,12 +134,13 @@ public class assgn3 {
     public static void main(String[] args) {
 
         Employee[] e = new Employee[20];
+        int[] arr = new int[10];
         Scanner inp = new Scanner(System.in);
         System.out.println("Enter the number of employees you want to enter : ");
         int j = inp.nextInt();
         for (int i = 0; i < j; i++) {
             e[i] = new Employee();
-            e[i].getData(e, i, inp);
+            e[i].getData( inp);
             e[i].designation(inp);
             e[i].calcgross();
         }
